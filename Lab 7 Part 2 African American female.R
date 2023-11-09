@@ -36,7 +36,7 @@ summary(dat_use)
 
 ## Null hypothesis: There is not a correlation between being an African American female and proportion of people who are working in public work sector
 
-ols_out1 <- lm(public_work_num ~ female + AfAm + educ_hs + educ_somecoll + educ_college + educ_advdeg + AGE, data = dat_use)
+ols_out1 <- lm(public_work_num ~ educ_hs + educ_somecoll + educ_college + educ_advdeg + AGE, data = dat_use)
 summary(ols_out1, type = "text")
 
 ## p-value: < 2.2e-16 / Our p-value was very small, therefore, I figure there are enough evidence to reject the null hypothesis.
@@ -55,7 +55,7 @@ summary(pred_vals_ols1)
 
 ## Mean was 0.5555
 
-model_logit1 <- glm(public_work_num ~ female + AfAm + educ_hs + educ_somecoll + educ_college + educ_advdeg + AGE, data = acs2021, family = binomial
+model_logit1 <- glm(public_work_num ~ educ_hs + educ_somecoll + educ_college + educ_advdeg + AGE, data = acs2021, family = binomial
 )
 summary(model_logit1)
 
